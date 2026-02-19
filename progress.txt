@@ -1,0 +1,43 @@
+# Problem Solvers — Progress
+
+## Phase 1: Foundation ✅
+- [x] Next.js 14+ scaffolded (TypeScript + Tailwind + App Router)
+- [x] Dependencies installed (GSAP, Lenis, Spline, Framer Motion, Howler, Supabase)
+- [x] Project structure created
+- [x] Tailwind configured with neon color palette + two-state CSS system
+- [x] Scroll engine (Lenis + GSAP ScrollTrigger) wired up
+- [x] Toggle state context (dormant/alive) with data-attribute CSS switching
+- [x] Sound manager hook (Howler.js, lazy-loaded, muted by default)
+- [x] All 6 section shell components with scroll-triggered GSAP animations
+- [x] SplineToggle placeholder (ready for .splinecode swap)
+- [x] Lead capture form (ready for Supabase connection)
+- [x] Sound toggle UI
+- [x] GSAP animation presets library
+- [x] Constants file (copy, colors, config)
+- [ ] Git init + push to GitHub
+- [ ] Connect Vercel
+
+## Phase 2: The Gate (BLOCKED — needs Spline .splinecode file)
+- [ ] Replace SplineToggle placeholder with Spline 3D scene
+- [ ] Text reveal mechanic synced to Spline events
+- [ ] Dormant → alive background transition polish
+- [ ] Sound integration on toggle
+
+## Phase 3: Sections (BLOCKED — needs assets)
+- [ ] Section 1 — THE WOW (needs 3D, video, particles)
+- [ ] Section 2 — THE PITCH (needs visual assets)
+- [ ] Section 3 — THE MACHINE (scroll-driven visualizations)
+- [ ] Section 4 — THE PROOF (capability demos)
+- [ ] Section 5 — THE ASK (finalize form format)
+
+## Phase 4: Polish
+- [ ] Sound design integration
+- [ ] Mobile adaptation
+- [ ] Performance optimization
+- [ ] Brand identity (logo, favicon, OG images)
+- [ ] SEO + meta tags
+
+## Phase 5: Ship
+- [ ] Final QA
+- [ ] Deploy to problemsolvers.ca
+- [ ] Lighthouse audit

@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
+/* ============================================
+   PROBLEM SOLVERS — Two-State Color System
+   Dormant (dark & moody) → Alive (electric neon)
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dormant palette — brooding, still, asleep */
+  --dormant-bg: #07070d;
+  --dormant-surface: #0e0e18;
+  --dormant-border: #1a1a2e;
+  --dormant-text: #2a2a3e;
+  --dormant-text-dim: #18182a;
+  --dormant-accent: #1e1e35;
+
+  /* Alive neon palette — electric energy */
+  --neon-blue: #00f0ff;
+  --neon-pink: #ff2d7b;
+  --neon-green: #39ff14;
+  --neon-cyan: #00fff7;
+  --neon-amber: #ffb800;
+  --neon-purple: #bf5af2;
+
+  /* Active state colors (swap on toggle) */
+  --bg: var(--dormant-bg);
+  --surface: var(--dormant-surface);
+  --border: var(--dormant-border);
+  --text-primary: var(--dormant-text);
+  --text-dim: var(--dormant-text-dim);
+  --accent: var(--dormant-accent);
+
+  /* Glow intensities */
+  --glow-sm: 0 0 10px;
+  --glow-md: 0 0 20px;
+  --glow-lg: 0 0 40px;
+  --glow-xl: 0 0 80px;
+}
+
+/* When the site comes alive */
+[data-alive="true"] {
+  --bg: #07070d;
+  --surface: #0c0c1a;
+  --border: #1a1a3a;
+  --text-primary: #f0f0ff;
+  --text-dim: #8888aa;
+  --accent: var(--neon-blue);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border-custom: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-dim: var(--text-dim);
+  --color-accent: var(--accent);
+
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-pink: var(--neon-pink);
+  --color-neon-green: var(--neon-green);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-amber: var(--neon-amber);
+  --color-neon-purple: var(--neon-purple);
+
+  --color-dormant-bg: var(--dormant-bg);
+  --color-dormant-surface: var(--dormant-surface);
+  --color-dormant-text: var(--dormant-text);
+
+  --font-sans: var(--font-space-grotesk);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background 1.2s ease, color 0.8s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dormant-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dormant-border);
+  border-radius: 3px;
+}
+
+[data-alive="true"] ::-webkit-scrollbar-thumb {
+  background: var(--neon-blue);
+  box-shadow: var(--glow-sm) var(--neon-blue);
+}
+
+/* Selection color */
+::selection {
+  background: var(--neon-blue);
+  color: var(--dormant-bg);
+}
+
+/* Neon glow utility classes */
+.glow-blue {
+  text-shadow: var(--glow-md) var(--neon-blue), var(--glow-lg) var(--neon-blue);
+}
+
+.glow-pink {
+  text-shadow: var(--glow-md) var(--neon-pink), var(--glow-lg) var(--neon-pink);
+}
+
+.glow-green {
+  text-shadow: var(--glow-md) var(--neon-green), var(--glow-lg) var(--neon-green);
+}
+
+/* Neon border glow */
+.border-glow-blue {
+  box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.1), var(--glow-md) rgba(0, 240, 255, 0.15);
+  border-color: var(--neon-blue);
+}
+
+/* Section snap points for scroll engine */
+.section {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
