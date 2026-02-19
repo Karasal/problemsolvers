@@ -8,12 +8,13 @@ interface SoundManagerState {
   playSound: (id: string) => void;
 }
 
-// Sound definitions — paths will be in /public/audio/
+// Sound definitions with real asset paths
 const SOUNDS: Record<string, { src: string; volume: number; loop?: boolean }> = {
-  ambient: { src: "/audio/ambient.mp3", volume: 0.3, loop: true },
-  toggle: { src: "/audio/toggle.mp3", volume: 0.5 },
-  whoosh: { src: "/audio/whoosh.mp3", volume: 0.4 },
-  click: { src: "/audio/click.mp3", volume: 0.3 },
+  toggle: { src: "/audio/bell.mp3", volume: 0.5 },
+  bassTone: { src: "/audio/bass-tone.mp3", volume: 0.3 },
+  whoosh: { src: "/audio/whoosh.wav", volume: 0.2 },
+  submit: { src: "/audio/button-push.mp3", volume: 0.4 },
+  ambient: { src: "/audio/delay.mp3", volume: 0.15, loop: true },
 };
 
 export function useSoundManager(): SoundManagerState {
@@ -35,6 +36,11 @@ export function useSoundManager(): SoundManagerState {
         loop: config.loop ?? false,
         preload: true,
       });
+    }
+
+    // Start ambient loop if available
+    if (howlsRef.current.ambient) {
+      howlsRef.current.ambient.play();
     }
   }, []);
 
