@@ -14,28 +14,33 @@
 - [x] Sound toggle UI
 - [x] GSAP animation presets library
 - [x] Constants file (copy, colors, config)
-- [ ] Git init + push to GitHub
-- [ ] Connect Vercel
+- [x] Git init + push to GitHub
 
-## Phase 2: The Gate (BLOCKED — needs Spline .splinecode file)
-- [ ] Replace SplineToggle placeholder with Spline 3D scene
-- [ ] Text reveal mechanic synced to Spline events
-- [ ] Dormant → alive background transition polish
-- [ ] Sound integration on toggle
+## Phase 2: The Gate ✅
+- [x] HeroToggle — SVG face morph (sad→happy) with Framer Motion
+- [x] Particle burst + energy cracks on activation
+- [x] Char-by-char GSAP text reveal (dormant → alive)
+- [x] Neon background gradient transition + holographic noise overlay
+- [x] Floating neon shape decoration
 
-## Phase 3: Sections (BLOCKED — needs assets)
-- [ ] Section 1 — THE WOW (needs 3D, video, particles)
-- [ ] Section 2 — THE PITCH (needs visual assets)
-- [ ] Section 3 — THE MACHINE (scroll-driven visualizations)
-- [ ] Section 4 — THE PROOF (capability demos)
-- [ ] Section 5 — THE ASK (finalize form format)
+## Phase 3: Sections ✅
+- [x] Asset pipeline — 118MB → 5.6MB (sharp/WebP, 95% compression)
+- [x] 227 Y2K SVGs + 57 WebP images + 5 audio files curated
+- [x] Section 1 — THE WOW (3-layer parallax, rorschach bg, neon shapes, Y2K SVGs, stagger title)
+- [x] Section 2 — THE PITCH (word-by-word tagline, AI chip, 24-bot army grid, CSS marquee ticker)
+- [x] Section 3 — THE MACHINE (pinned ScrollTrigger 400vh scrub, 3-phase timeline, HUD overlays, data particles)
+- [x] Section 4 — THE PROOF (holographic imagery per card, hover lift/rotate, animated results counter)
+- [x] Section 5 — THE ASK (holographic + glitch bg, pulsing neon submit, confetti success, SFX integration)
+- [x] Audio — Real SFX wired (bell, bass, whoosh, button-push, delay ambient loop)
+- [x] Build passes clean, pushed to GitHub
 
 ## Phase 4: Polish
-- [ ] Sound design integration
-- [ ] Mobile adaptation
-- [ ] Performance optimization
+- [ ] Sound design fine-tuning (volume levels, trigger timing)
+- [ ] Mobile adaptation (responsive breakpoints, touch interactions)
+- [ ] Performance optimization (lazy loading, image priorities, bundle analysis)
 - [ ] Brand identity (logo, favicon, OG images)
 - [ ] SEO + meta tags
+- [ ] Connect Vercel
 
 ## Phase 5: Ship
 - [ ] Final QA
